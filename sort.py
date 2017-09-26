@@ -2,15 +2,15 @@
 # coding=utf-8
 class Solution(object):
     def bubblesort(self, arr):
-        for i in range(0, len(arr)):
-            for k in range(0, len(arr) - i - 1):
+        for i in range(len(arr) - 1):
+            for k in range(len(arr) - i - 1):
                 if arr[k] > arr[k + 1]:
-                    arr[k], arr[k+1]= arr[k+1], arr[k]
+                    arr[k], arr[k + 1]= arr[k + 1], arr[k]
     def insertsort(self, arr):
         for i in range(1, len(arr)):
             for j in range(i, 0, -1):
-                if arr[j-1] > arr[j]:
-                    arr[j], arr[j-1] = arr[j-1], arr[j]
+                if arr[j - 1] > arr[j]:
+                    arr[j], arr[j - 1] = arr[j - 1], arr[j]
     def selectionsort(self, arr):
         for i in range(len(arr)):
             min_i = i
@@ -93,5 +93,5 @@ class Solution(object):
 if __name__ == "__main__":
     arr = [7,6,5,4,3,2,1,0]
     so = Solution()
-    so.quicksort(arr)
+    so.bubblesort(arr)
     print arr
